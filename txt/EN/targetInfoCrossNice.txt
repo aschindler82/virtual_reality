@@ -1,0 +1,3 @@
+Would you be so kind and drop it at the |TARGET|. It is run by a |CONTEXT| guy.
+I would really appreciate if you delivered it to the |CONTEXT| owner of the |TARGET|.
+Please drop it at the |TARGET|. It is owned by a |CONTEXT| guy. Many thanks!

@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Memory Space Paradigm</title>
+    <script type="text/javascript" src="vizhtml.js"></script>
+</head>
+<body>
+<script language="javascript">
+
+var socket = new viz.WebSocket();
+
+// update connection status
+socket.onevent('open', function(e){
+    document.getElementById('status').innerHTML = 'connected';
+})
+
+socket.onevent('close', function(e){
+    document.getElementById('status').innerHTML = 'waiting for connection';    
+    socket.reconnect();
+})
+
+// update start string
+socket.onevent('set_startStr', function(e){
+	var startStr = e.data.startStr;
+    document.getElementById('startStr').innerHTML = startStr;
+})
+
+
+// update time elapsed since run start
+socket.onevent('set_timeElapsed', function(e){
+	var timeStr = e.data.timeElapsed;	
+    document.getElementById('timeElapsed').innerHTML = timeStr;
+})
+
+
+// update trial counter
+socket.onevent('set_trialCtr', function(e){
+	var trialStr = e.data.trialCtr;
+    document.getElementById('trialCtr').innerHTML = trialStr;
+})
+
+//update current trial performance
+socket.onevent('set_trialPerf', function(e){
+	var trialPerfStr = e.data.trialPerf;
+    document.getElementById('trialPerf').innerHTML = trialPerfStr;
+})
+
+//update mean performance
+socket.onevent('set_meanPerf', function(e){
+	var meanPerfStr = e.data.meanPerf;
+    document.getElementById('meanPerf').innerHTML = meanPerfStr;
+})
+
+var click_count = 0;
+function onButtonClick()
+{
+    click_count += 1;
+    socket.send( 'button_click' , viz.Data({'count':click_count}) );
+}
+
+</script>
+<div>Status:</div><div id='status'>waiting for connection</div></br>
+<h3 id='startStr'>Empty</h3>
+<p>
+
+<table>
+
+	<th id='trialCtr' align="left">Trial X of X</th>
+	<tr>
+		<td>Mean Performance:</td>
+		<td><div id="meanPerf">NaN</div></td>
+	</tr>
+	<tr>
+		<td>Performance Last Trial:</td>
+		<td><div id="trialPerf">NaN</div></td>
+	</tr>	
+	<tr>		
+		<td height="10px"></td>
+	</tr>
+	<tr>		
+		<td>Time Elapsed:</td>
+		<td><div id="timeElapsed">NaN</div></td>
+	</tr>	
+		
+</table>
+
+
+</body>
+</html>

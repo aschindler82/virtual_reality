@@ -1,0 +1,3 @@
+Wärst Du so nett und würdest es beim |TARGET| abgeben? Es wird von einem |CONTEXT|en Bewohner geführt.
+Ich wäre Dir sehr dankbar wenn Du es zum |TARGET| bringen könntest. Es wird geführt von einem |CONTEXT|en Bewohner.
+Bitte gib es doch beim |TARGET| ab. Es gehört einem |CONTEXT|en Bewohner. Tausend Dank!

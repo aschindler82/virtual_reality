@@ -1,0 +1,3 @@
+Bring es zum |TARGET|! Es wird von einem |CONTEXT|en Typen geführt. Du machst Dich besser mal auf den Weg!
+Schaff es zum |TARGET|! Der Besitzer ist ein |CONTEXT|er. Gib Gummi!
+Liefer es zum |TARGET|! Der Eigentümer ist ein |CONTEXT|er Typ. Mach hin!
